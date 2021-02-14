@@ -18,6 +18,6 @@ class User:
 
         User.user_list.append(self)
 
-# class Credentials:
-#     """
-#     Class to generate
+class Credentials:
+    """
+    Class to generate
