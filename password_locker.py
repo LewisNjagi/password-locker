@@ -68,7 +68,11 @@ def main():
             
             validity = verify_user(first_name,password)
             if validity == first_name:
-                print("You did it!!")
+                print("\n")
+                print(f'Welcome {first_name}. Use these short codes to continue.')
+                print("\n")
+                print('Navigation codes: \n cc - Create Account Credential \n dc - Display Account Credentials \n ex-Exit')
+
 
 if __name__=='__main__':
     main()
