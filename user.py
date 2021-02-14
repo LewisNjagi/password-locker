@@ -36,5 +36,15 @@ class Credentials:
         '''
         save credentials method saves credentials into credentials_list
         '''
-        
+
         Credentials.credentials_list.append(self)
+
+    def valid_user(self):
+        '''
+
+        '''
+        valid_user = ''
+        for user in User.user_list:
+            if user.password == self.new_credential.password:
+                valid_user = user.password
+        return valid_user

@@ -14,6 +14,12 @@ def save_user(user):
     '''
     user.save_user()
 
+# def valid_user(password):
+#     '''
+
+#     '''
+    
+
 def create_credentials(user_name,site,account_name,password):
     '''
     Function to create user credentials
@@ -54,10 +60,12 @@ def main():
             print('Login Into Your Account: ')
 
             print("---Enter your First Name---")
-            user_name = input("First Name: ")
+            first_name = input("First Name: ")
 
             print("---Enter your Password---")
             password = input("Password: ")
+            valid_user = valid_user(password)
+
 
 
 if __name__=='__main__':
