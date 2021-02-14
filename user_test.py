@@ -69,11 +69,11 @@ class TestCredentials(unittest.TestCase):
         new_user2.save_user()
 
         for user in User.user_list:
-            if user.password == new_user2.password:
-                valid_user = user.password
+            if user.first_name == new_user2.first_name and user.password == new_user2.password:
+                valid_user = user.first_name
         return valid_user
         
-        self.assertEqual(valid_user,Credentials.valid_user(password))
+        self.assertEqual(valid_user,Credentials.valid_user(new_user2.password,new_user2.first_name))
 
 if __name__ == '__main__':
     unittest.main()
