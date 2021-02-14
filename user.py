@@ -31,3 +31,10 @@ class Credentials:
         self.site = site
         self.account_name = account_name
         self.password = password
+
+    def save_credentials(self):
+        '''
+        save credentials method saves credentials into credentials_list
+        '''
+        
+        Credentials.credentials_list.append(self)
