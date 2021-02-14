@@ -39,12 +39,13 @@ class Credentials:
 
         Credentials.credentials_list.append(self)
 
-    def valid_user(self):
+    @classmethod
+    def valid_user(cls,first_name,password):
         '''
 
         '''
         valid_user = ''
         for user in User.user_list:
-            if user.password == password:
-                valid_user = user.password
+            if user.first_name == first_name and user.password == password:
+                valid_user = user.first_name
         return valid_user
