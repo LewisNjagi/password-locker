@@ -28,7 +28,7 @@ class TestUser(unittest.TestCase):
         '''
 
         self.new_user.save_user()
-        self.assertEqual(len(User.user_list),1)
+        self.assertEqual(len(User.user_list),2)
 
 class TestCredentials(unittest.TestCase):
     '''
@@ -65,14 +65,15 @@ class TestCredentials(unittest.TestCase):
         test case to test if Login credentials are saved
         '''
 
-        self.new_credential.save_credentials()
+        new_user2 = User("James","Njue","1234")
+        new_user2.save_user()
 
         for user in User.user_list:
-            if user.password == self.new_credential.password:
+            if user.password == new_user2.password:
                 valid_user = user.password
         return valid_user
         
-        self.assertEqual(current_user,Credentials.valid_user(password))
+        self.assertEqual(valid_user,Credentials.valid_user(password))
 
 if __name__ == '__main__':
     unittest.main()

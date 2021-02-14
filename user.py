@@ -45,6 +45,6 @@ class Credentials:
         '''
         valid_user = ''
         for user in User.user_list:
-            if user.password == self.new_credential.password:
+            if user.password == password:
                 valid_user = user.password
         return valid_user
