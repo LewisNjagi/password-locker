@@ -14,11 +14,11 @@ def save_user(user):
     '''
     user.save_user()
 
-def valid_user(password):
+def verify_user(first_name,password):
     '''
 
     '''
-    valid = Credentials.valid_user(password)
+    valid = Credentials.valid_user(first_name,password)
     return valid
 
 def create_credentials(user_name,site,account_name,password):
@@ -66,8 +66,8 @@ def main():
             print("---Enter your Password---")
             password = input("Password: ")
             
-            valid_user = valid_user(password)
-            if valid_user == password:
+            validity = verify_user(first_name,password)
+            if validity == first_name:
                 print("You did it!!")
 
 if __name__=='__main__':
