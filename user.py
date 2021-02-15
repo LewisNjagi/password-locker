@@ -32,6 +32,7 @@ class Credentials:
         self.account_name = account_name
         self.password = password
 
+    @classmethod
     def save_credentials(self):
         '''
         save credentials method saves credentials into credentials_list
@@ -49,6 +50,7 @@ class Credentials:
             if user.first_name == first_name and user.password == password:
                 valid_user = user.first_name
         return valid_user
+    
     @classmethod
     def display_credentials(cls):
         '''

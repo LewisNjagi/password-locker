@@ -34,6 +34,12 @@ def save_credentials(Credentials):
     '''
     Credentials.save_credentials()
 
+def display_credentials():
+    '''
+
+    '''
+    return Credentials.display_credentials()
+
 def main():
     print(' ')
     print('Hello, Welcome to Password Locker')
@@ -89,6 +95,9 @@ def main():
                         print("---Enter AccountName---")
                         account_name = input("AccountName ")
 
+                        print("---Enter User---")
+                        user_name = input("User ")
+
                         print("\n")
                         print('Password: \n gp - Generate Password \n ep - Enter Password \n ex-Exit')
                         pass_code = input('\n Enter your pasword short code: ').lower()
@@ -101,8 +110,21 @@ def main():
                             break
                         else:
                             print("You did not make a selection")
+                        save_credentials(create_credentials(user_name,site,account_name,password))
                     elif nav_code == 'dc':
-                        
+                        if display_credentials():
+                            print("Here is a list of all your credentials")
+                            print("\n")
+
+                            for Credentials in display_credentials():
+                                print(f"{site} for {account_name}")
+                                print("\n")
+                        else:
+                            print('\n')
+                            print("You dont seem to have any credentials saved yet")
+                            print('\n')
+                    elif nav_code == 'ex':
+                        break
 
 
 if __name__=='__main__':
