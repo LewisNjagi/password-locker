@@ -1,3 +1,6 @@
+# import random
+import string
+
 class User:
     """
     Class that generates new intances of users
@@ -57,3 +60,11 @@ class Credentials:
         method that returns the contact list
         '''
         return cls.credentials_list
+
+    def generate_password(size=6, char=string.digits):
+        
+        '''
+        Function to generate an 8 character password for a credential
+        '''
+        result=''.join(random.choice(char) for _ in range(size))
+        return result

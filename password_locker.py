@@ -40,6 +40,13 @@ def display_credentials():
     '''
     return Credentials.display_credentials()
 
+def generate_password():
+	'''
+	Function to generate a password automatically
+	'''
+	result = Credentials.generate_password()
+	return result
+
 def main():
     print(' ')
     print('Hello, Welcome to Password Locker')
@@ -65,6 +72,7 @@ def main():
             print("\n")
             print("-"*60)
             print(f"New Account created for: {first_name} {last_name} your password: {password}")
+            print("You can now LogIn to your account")
             print("-"*60)
 
         elif short_code == 'li':
@@ -80,7 +88,7 @@ def main():
             if validity == first_name:
                 print("\n")
                 print("-"*60)
-                print(f'Welcome {first_name}.You have logged into you account successfully. Use these short codes to continue.')
+                print(f'Welcome {first_name}.You have logged into you account successfully. \n Use these short codes to continue.')
                 print("-"*60)
                 while True:
                     print("\n")
@@ -102,7 +110,7 @@ def main():
                         print('Password: \n gp - Generate Password \n ep - Enter Password \n ex-Exit')
                         pass_code = input('\n Enter your pasword short code: ').lower()
                         if pass_code == 'gp':
-                            print("we'll get there")
+                            password = generate_password()
                         elif pass_code == 'ep':
                             print("Enter your Password here...")
                             password = input("Password ")
@@ -140,9 +148,8 @@ def main():
         elif short_code == 'ex':
             break
         else:
+            print("-"*60)
             print('Invalid short code')
-            
-
-
+            print("-"*60)
 if __name__=='__main__':
     main()
