@@ -15,12 +15,14 @@ Password locker application where it allows to store passwords and manage them.
 * xcli 
 ## Cloning
 * In the Terminal
-$ git clone https://github.com/LewisNjagi/password-locker.git
-$ cd Password-locker
+
+      $ git clone https://github.com/LewisNjagi/password-locker.git
+      $ cd Password-locker
 ## Running the Application
 * In the terminal
-$ chmod +x password_locker.py
-$ ./password_locker.py
+
+      $ chmod +x password_locker.py
+      $ ./password_locker.py
 ## Known Bugs
 There are no Bugs.
 ## Technologies Used
