@@ -55,6 +55,7 @@ def main():
 
             save_user(create_user(first_name,last_name,password))
             print("\n")
+            print("*"*60)
             print(f"New Account created for: {first_name} {last_name} your password: {password}")
 
         elif short_code == 'li':
@@ -69,9 +70,29 @@ def main():
             validity = verify_user(first_name,password)
             if validity == first_name:
                 print("\n")
-                print(f'Welcome {first_name}. Use these short codes to continue.')
-                print("\n")
-                print('Navigation codes: \n cc - Create Account Credential \n dc - Display Account Credentials \n ex-Exit')
+                print("*"*60)
+                print(f'Welcome {first_name}.You have logged into you account successfully. Use these short codes to continue.')
+                while True:
+                    print("\n")
+                    print('Navigation codes: \n cc - Create Account Credential \n dc - Display Account Credentials \n ex-Exit')
+                    nav_code = input('\n Enter your short code: ').lower()
+                    if nav_code == 'cc':
+                        print("Create Account Credentials")
+
+                        print("---Enter Website---")
+                        site = input("Site Name ")
+
+                        print("---Enter AccountName---")
+                        account_name = input("AccountName ")
+
+                        print("\n")
+                        print('Password: \n gp - Generate Password \n ep - Enter Password \n ex-Exit')
+                        pass_code = input('\n Enter your pasword short code: ').lower()
+                        if pass_code == 'gp':
+                            print("we'll get there")
+                        elif pass_code == 'ep':
+                            print("Enter your Password here...")
+                            password = input("Password ")
 
 
 if __name__=='__main__':
