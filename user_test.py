@@ -75,5 +75,11 @@ class TestCredentials(unittest.TestCase):
         
         self.assertEqual(valid_user,Credentials.valid_user(new_user2.password,new_user2.first_name))
 
+    def test_display_credentials(self):
+        '''
+        test case to test if credentials are displayed
+        '''
+        self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)
+
 if __name__ == '__main__':
     unittest.main()

@@ -37,11 +37,13 @@ def save_credentials(Credentials):
 def main():
     print(' ')
     print('Hello, Welcome to Password Locker')
+    print("-"*60)
     while True:
         print('\n')
         print("Use these short codes: \n ca - Create a new Account \n li - Log Into Existing Account \n ex - Exit the user list ")
         short_code = input('\n Enter your short code: ').lower()
         if short_code == 'ca':
+            print("\n")
             print('To create a new account: ')
 
             print("---Enter your First Name---")
@@ -55,8 +57,9 @@ def main():
 
             save_user(create_user(first_name,last_name,password))
             print("\n")
-            print("*"*60)
+            print("-"*60)
             print(f"New Account created for: {first_name} {last_name} your password: {password}")
+            print("-"*60)
 
         elif short_code == 'li':
             print('Login Into Your Account: ')
@@ -70,8 +73,9 @@ def main():
             validity = verify_user(first_name,password)
             if validity == first_name:
                 print("\n")
-                print("*"*60)
+                print("-"*60)
                 print(f'Welcome {first_name}.You have logged into you account successfully. Use these short codes to continue.')
+                print("-"*60)
                 while True:
                     print("\n")
                     print('Navigation codes: \n cc - Create Account Credential \n dc - Display Account Credentials \n ex-Exit')
@@ -93,6 +97,12 @@ def main():
                         elif pass_code == 'ep':
                             print("Enter your Password here...")
                             password = input("Password ")
+                        elif pass_code == 'ex':
+                            break
+                        else:
+                            print("You did not make a selection")
+                    elif nav_code == 'dc':
+                        
 
 
 if __name__=='__main__':

@@ -49,3 +49,9 @@ class Credentials:
             if user.first_name == first_name and user.password == password:
                 valid_user = user.first_name
         return valid_user
+    @classmethod
+    def display_credentials(cls):
+        '''
+        method that returns the contact list
+        '''
+        return cls.credentials_list
