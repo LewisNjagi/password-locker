@@ -111,20 +111,37 @@ def main():
                         else:
                             print("You did not make a selection")
                         save_credentials(create_credentials(user_name,site,account_name,password))
+                        print("\n")
+                        print("-"*60)
+                        print(f"New Account credentials created for Site: {site} Account Name: {account_name} Password: {password}")
+                        print("-"*60)
                     elif nav_code == 'dc':
                         if display_credentials():
-                            print("Here is a list of all your credentials")
                             print("\n")
+                            print("Here is a list of all your credentials")
+                            
 
                             for Credentials in display_credentials():
-                                print(f"{site} for {account_name}")
-                                print("\n")
+                                print("-"*60)
+                                print(f"Account credentials for Site Name: {site}, of Account name: {account_name}, password:{password}")
+                                print("-"*60)
                         else:
-                            print('\n')
+                            print("\n")
+                            print("-"*60)
                             print("You dont seem to have any credentials saved yet")
-                            print('\n')
+                            print("-"*60)
                     elif nav_code == 'ex':
                         break
+                    else:
+                        print("\n")
+                        print("-"*60)
+                        print("You did not make a selection")
+                        print("-"*60)
+        elif short_code == 'ex':
+            break
+        else:
+            print('Invalid short code')
+            
 
 
 if __name__=='__main__':
